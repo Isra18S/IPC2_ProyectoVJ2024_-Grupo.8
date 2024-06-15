@@ -1,34 +1,43 @@
-#from graphviz import Digraph
 import tkinter as tk
 from tkinter import messagebox
-#import tkinter
+from PIL import Image, ImageTk
+
 
 class AppInicio:
     def __init__(self, ventana):
         self.ventana = ventana
         self.ventana.title("IPC2market")
-        ventana.geometry("600x400")
+        ventana.geometry("600x400+500+200")
 
-        #img = tkinter.PhotoImage(file="carrito.png")
-        #lbl_img = tkinter.Label(ventana, image = img)
-        #lbl_img.pack()
-        # NO SALE LA IMAGEN 7o7
+    # Especifica la ruta de la imagen
+        self.image = Image.open("imagenes/carrito.png")
+        self.image = self.image.resize((220, 220))
+        self.image = ImageTk.PhotoImage(self.image)
+        self.label = tk.Label(root, image = self.image)
+        self.label.place(x=50, y=60)
 
-        self.label_titulo = tk.Label(ventana, text="IPC2market")
+
+        self.label_titulo = tk.Label(ventana, text="IPC2market", font="20")
         self.label_titulo.pack()
-
+        self.label_titulo.place(x=380,y=20)
+        
         self.label_user = tk.Label(ventana, text="Usuario")
         self.label_user.pack()
+        self.label_user.place(x=400,y=70)
         self.entry_user = tk.Entry(ventana)
         self.entry_user.pack()
+        self.entry_user.place(x=365,y=90)
 
         self.label_pass = tk.Label(ventana, text="Contraseña")
         self.label_pass.pack()
+        self.label_pass.place(x=395,y=130)
         self.entry_pass = tk.Entry(ventana, show="*")
         self.entry_pass.pack()
+        self.entry_pass.place(x=365,y=150)
 
         self.login_button = tk.Button(ventana, text="Ingresar", command=self.login)
         self.login_button.pack()
+        self.login_button.place(x=400,y=180)
 
     def login(self):
         usuario = self.entry_user.get()
