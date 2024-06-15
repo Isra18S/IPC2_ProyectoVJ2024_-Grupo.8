@@ -1,7 +1,12 @@
 import tkinter as tk
 from tkinter import messagebox
-from PIL import Image, ImageTk
+<<<<<<< Updated upstream
 
+
+=======
+#import tkinter
+from admin import open_new_window
+>>>>>>> Stashed changes
 
 class AppInicio:
     def __init__(self, ventana):
@@ -43,8 +48,9 @@ class AppInicio:
         usuario = self.entry_user.get()
         contraseña = self.entry_pass.get()
         
-        if usuario == "AdminIPC2" and contraseña == "IPC2VJ2024":
-            messagebox.showinfo("IPC2market", "Aceptado!")
+        if usuario == "" and contraseña == "":
+            self.ventana.destroy()
+            open_new_window()
             
         else:
             messagebox.showwarning("IPC2market", "Usuario o contraseña incorrecto!!")
