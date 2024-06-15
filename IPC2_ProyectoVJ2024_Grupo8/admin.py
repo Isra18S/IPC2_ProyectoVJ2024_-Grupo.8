@@ -8,7 +8,7 @@ def open_new_window():
 
     new_window = tk.Tk()
     new_window.title("Nueva Ventana")
-    new_window.geometry("600x300+100+100")  # Ajusta la posición y tamaño de la ventana principal
+    new_window.geometry("600x300+500+200")  # Ajusta la posición y tamaño de la ventana principal
 
     label = tk.Label(new_window, text="¡Bienvenido a la nueva ventana!")
     label.pack(pady=20)

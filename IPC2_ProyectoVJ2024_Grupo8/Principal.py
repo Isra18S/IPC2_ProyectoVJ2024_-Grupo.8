@@ -1,12 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
-<<<<<<< Updated upstream
-
-
-=======
-#import tkinter
+from PIL import Image, ImageTk
 from admin import open_new_window
->>>>>>> Stashed changes
 
 class AppInicio:
     def __init__(self, ventana):
